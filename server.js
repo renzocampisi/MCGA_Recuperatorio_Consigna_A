@@ -4,16 +4,16 @@ const mongoose = require("mongoose");
 dotenv.config({ path: './.env' })
 
 
-mongoose.connect("mongodb+srv://renzocampisi:renzo123@cluster0.fu5nwtd.mongodb.net/db-users?retryWrites=true&w=majority")
-.catch( err => console.log('Error connection database') )
+mongoose.connect(process.env.DATABASE_URL)
+.catch( err => console.log('🔴 Error connection database') )
 
 mongoose.connection.on('open', () =>{
-    console.log('Connection succesfull');
+    console.log("🟢 DB Connected");
 })
 
 
 const PORT = process.env.PORT || 4001
 
 app.listen(PORT, () => {
-    console.log(`Runnig for PORT: ${PORT}`);
+    console.log(`🚗 Server running on port: ${PORT}`);
 })
