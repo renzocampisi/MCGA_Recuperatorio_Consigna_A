@@ -1,6 +1,10 @@
-const createUser = (req,res) => {
+const { User } = require("../models/userModel");
+
+const createUser = async (req,res) => {
        
-    const { nombre, apellido } = req.body
+    const { name, lastName, date, dni, age, nationality, email, password } = req.body
+
+   await User.create({ name, lastName, date, dni, age, nationality, email, password })
 
     console.log(req.body);
 

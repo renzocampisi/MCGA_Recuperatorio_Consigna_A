@@ -1,17 +1,17 @@
 const { body, validationResult } = require("express-validator");
 
 const validationCreateUser = [
-  body("nombre")
+  body("name")
     .notEmpty()
     .withMessage("Nombre no puede estar vacio")
     .isLength({ min: 5 })
     .withMessage("Nombre con menos de 5 letras"),
-  body("apellido")
+  body("lastName")
     .notEmpty()
     .withMessage("Apellido no puede estar vacio")
     .isLength({ min: 5 })
     .withMessage("Apellido con menos de 5 letras"),
-  body("fecha")
+  body("date")
     .isDate()
     .withMessage("Fecha: formato invalido EJ(MM-DD-YY)")
     .notEmpty()
@@ -23,16 +23,10 @@ const validationCreateUser = [
     .withMessage("DNI no puede contener menos de 8 numeros")
     .isNumeric()
     .withMessage("DNI no puede contener letras"),
-  body("edad")
+  body("age")
     .notEmpty()
-    .withMessage("Edad no puede estar vacio")
-    .isLength({ min: 10 })
-    .withMessage("Edad no puede ser menor a 10")
-    .isLength({ max: 100 })
-    .withMessage("Edad no puede ser mayor a 100")
-    .isNumeric()
-    .withMessage("Edad no puede contener letras"),
-  body("nacionalidad")
+    .withMessage("Edad no puede estar vacio"),
+  body("nationality")
     .notEmpty()
     .withMessage("Nacionalidad no puede estar vacio")
     .withMessage("Nacionalidad con menos de 5 letras"),
@@ -41,7 +35,7 @@ const validationCreateUser = [
     .withMessage("Email invalido")
     .notEmpty()
     .withMessage("Email no puede estar vacio"),
-  body("contrasena")
+  body("password")
     .notEmpty()
     .withMessage("Contrasena no puede estar vacio")
     .isLength({ min: 5 })
