@@ -11,7 +11,7 @@ const createUser = async (req,res) => {
 
 const getUsers = async (req,res) =>{
 
-    const allUsers = await User.find()
+    const allUsers = await User.find({ isDelete:false })
 
     res.status(200).json({allUsers})
 }

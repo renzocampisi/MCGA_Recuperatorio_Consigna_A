@@ -28,8 +28,7 @@ const validationCreateUser = [
     .withMessage("Edad no puede estar vacio"),
   body("nationality")
     .notEmpty()
-    .withMessage("Nacionalidad no puede estar vacio")
-    .withMessage("Nacionalidad con menos de 5 letras"),
+    .withMessage("Nacionalidad no puede estar vacio"),
   body("email")
     .isEmail()
     .withMessage("Email invalido")
