@@ -55,7 +55,6 @@ const deleteUser = async (req,res) =>{
     res.status(200).json({ message : 'Usuario eliminado correctamente' })
 }
 
-// Cambia la edad pero no al ID seleccionado
 const updateUser = async (req,res) => {
     
     const { id } = req.params
